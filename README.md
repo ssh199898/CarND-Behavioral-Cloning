@@ -39,7 +39,7 @@ I used the well-known model designed by Nvidia. This network consists 5 convolut
 
 <img src="./doc/network.png" height=300px>
 
-The network takes inputs with size of 66x200x3. However the image captured from the simulator is `160x360`. Thus, I attached the pre-processing layers provided by keras at the front of this model. The first pre-processing layer crops top and bottom pixels to remove irrelevant information for training. The second layer resizes the image to `66x200`. The third one normalizes the value of [0, 255] within the range of [-1, 1].
+The network takes inputs with size of `66x200x3`. However the image captured from the simulator is `160x360`. Thus, I attached the pre-processing layers provided by keras at the front of this model. The first pre-processing layer crops top and bottom pixels to remove irrelevant information for training. The second layer resizes the image to `66x200`. The third one normalizes the value of `[0, 255]` within the range of `[-1, 1]`.
 
 <img src="./doc/crop.png" height=150px>
 
@@ -70,11 +70,11 @@ Each image of dataset is labeled with its steering measurement as below.
 
 
 ### 2. Data Distribution
-Most of initial dataset were the images labeled going straight. The network trained with this is heavily biased toward, not being able to make sharp turns. The total number of samples are 10699.
+Most of initial dataset were the images labeled going straight. The network trained with this is heavily biased toward, not being able to make sharp turns. The total number of samples are `10699`.
 
 <img src="./doc/dist.png" height=200px>
 
-The data distribution needed to be uniform. I produced a histogram of the steering measurements and calculated the average number of samples per bin. If the number of samples is above average, the samples are dropped with the keep probability of `(avg_sample_per_bin / num_samples_of_bin)`. The flattened data distribution is as follows. The total number of samples are 3317.
+The data distribution needed to be uniform. I produced a histogram of the steering measurements and calculated the average number of samples per bin. If the number of samples is above average, the samples are dropped with the keep probability of `(avg_sample_per_bin / num_samples_of_bin)`. The flattened data distribution is as follows. The total number of samples are `3317`.
 
 <img src="./doc/dist_flat.png" height=200px>
 
