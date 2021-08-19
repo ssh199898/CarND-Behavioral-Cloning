@@ -81,7 +81,7 @@ The data distribution needed to be uniform. I produced a histogram of the steeri
 ### 3. Data Augumentation
 Dataset of 3317 images is not quite enough for training. Thus it is required to generate more data. I utilized the left and right camera images, biasing the steering measurement by `0.23`, then flipped all three images and measurements. The total number of samples are increased to `19902`.
 
-<img src="./doc/dist_aug.png" height=200px>
+<img src="./doc/dist_aug.png" height=200px> <img src="./doc/aug_sample.png" height=200px>
 
 ## Result
 
